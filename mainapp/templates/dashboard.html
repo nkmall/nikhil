@@ -1,0 +1,67 @@
+{%extends "index.html"%}
+{%block body%}
+<div class="container">
+    <div class="container">
+        <!-- <a href="" class="btn btn-outline-danger">Logout</a> -->
+        <h1 class="text-center alert alert-info m-2">Welcome,{{request.user.username}}
+            <div class="container text-center">
+            <a href="/logout" class="btn btn-outline-danger">Logout</a>    
+
+            </div>
+        </h1>
+        
+    </div>
+    <div class="container ">
+        <div class="row">
+            <div class="col-sm-5">
+             <h1 class="alert alert-success text-center">Student Data Submit</h1>
+             {%for i in form%}
+            {{i.label_tag}} {{i}}<br> {{i.errors}}
+            {%endfor%}
+            <div class="container text-center">
+                <button class="alert alert-success" style="width: 50%;">Submit</button>
+                <!-- <a href="" class="alert alert-success" style="width: 150px;">Submit</a> -->
+            </div>
+            
+            </div>
+            <div class="col">
+              <h1 class="alert alert-warning">Student Details</h1>
+              <table class="table table-hover mt-2">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>
+                        <a href="" class="btn btn-outline-success">Update</a>
+                        <a href="" class="btn btn-outline-danger">Delete</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>
+                        <a href="" class="btn btn-outline-success">Update</a>
+                        <a href="" class="btn btn-outline-danger">Delete</a>
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div>
+</div>
+{%endblock body%}
